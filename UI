@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mini App</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 1em;
+		background-color:white;
+      }
+      
+      [data-cart-info],
+      [data-credit-card] {
+        transform: scale(0.78);
+    	margin-left: -3.4em;
+		mdc-card:outline;
+      }
+
+      [data-cc-info] input:focus,
+      [data-cc-digits] input:focus {
+        outline: none;
+      }
+
+      .mdc-card__primary-action,
+      .mdc-card__primary-action:hover {
+        cursor: auto;
+        padding: 20px;
+        min-height: inherit;
+      }
+      
+      [data-credit-card] [data-card-type] {
+        transition: width 1.5s;
+        margin-left: calc(100% - 130px);
+      }
+
+      .is-visa {
+        background: linear-gradient(135deg, #622774 0%, #c53364 100%);
+      }
+
+      .is-mastercard {
+        background: linear-gradient(135deg, #65799b 0%, #5e2563 100%);
+      }
+
+      .is-visa [data-card-type],
+      .is-mastercard [data-card-type] {
+        width: auto;
+      }
+
+      input.is-invalid,
+      .is-invalid input {
+        text-decoration: line-through;
+      }
+
+      ::placeholder {
+        color: #fff;
+      }
+	  [data-pay-btn]  {
+		  width:90%;
+		  position:fixed;
+		  border:0 20px solid 1px;
+		  	  
+	  }
+	  span {
+		  display:inline-block;
+		  vertical-align:middle;
+	  }
+	  span.Material-icons {
+		  font-size:150px;
+	  }
+	  [data-credit-card] {
+		  width:435px;
+		  min-height:240px;
+		  border-radius:10px;
+		  background-color:#5d6874;
+	  }
+	  [data-card-type] {
+		  display:block;
+		  width:120px;
+		  height:60px;
+	  }
+	  [data-cc-digits] {
+		  margin-top:2em;
+	  }
+	  [data-cc-digits] > input {
+		  color:white;
+		  border:none;
+		  background:none;
+		  font-size:2em;
+		  line-height:2em;
+		  margin-right:0.5em;
+	  }
+	  [data-cc-info] {
+		  margin-top:1.2em;
+	  }
+	  [data-cart-info] > input {
+		  color:white;
+		  border:none;
+		  background:none;
+		  font-size:1.2em;
+	  }
+	  [data-cart-info] > input:nth-child(2) {
+		  padding-right:10px;
+		  float:right;
+
+	  }
+    </style>
+  </head>
+  <body>
+	  <div data-cart-info>
+			 <header class="mdc-typography--headline4">
+		   <span class="material-icons">Shopping_Cart</span><span data-bill></span>
+			 </header>
+	  </div>
+	  <div data-credit-card class="mdc-card mdc-cd--outlined">
+		  <div class="mdc-card_primary-action">
+			  <img data-card-type="" src="http://placehold.it/120x60.png?text=Card"/>
+			  
+		  </div>
+	  </div>
+	  <div data-cc-digits>
+			<input type="text" size="4" placeholder="----"></input>
+			<input type="text" size="4" placeholder="----"></input>
+			<input type="text" size="4" placeholder="----"></input>
+			<input type="text" size="4" placeholder="----"></input>
+		</div>
+
+	  <div data-cc-info>
+			  <input type="text"size="20"placeholder="Name Surname"></input>
+	<input type="text"size="6"placeholder="MM/YY"></input>
+		
+	  </div>
+	  <button data-pay-btn class="mdc-button">Pay & Checkout Now</button>
+	  </div>
+<script>
+      const supportedCards = {
+        visa, mastercard
+      };
+      
+      const countries = [
+        {
+          code: "US",
+          currency: "USD",
+          country: 'United States'
+        },
+        {
+          code: "NG",
+          currency: "NGN",
+          country: 'Nigeria'
+        },
+        {
+          code: 'KE',
+          currency: 'KES',
+          country: 'Kenya'
+        },
+        {
+          code: 'UG',
+          currency: 'UGX',
+          country: 'Uganda'
+        },
+        {
+          code: 'RW',
+          currency: 'RWF',
+          country: 'Rwanda'
+        },
+        {
+          code: 'TZ',
+          currency: 'TZS',
+          country: 'Tanzania'
+        },
+        {
+          code: 'ZA',
+          currency: 'ZAR',
+          country: 'South Africa'
+        },
+        {
+          code: 'CM',
+          currency: 'XAF',
+          country: 'Cameroon'
+        },
+        {
+          code: 'GH',
+          currency: 'GHS',
+          country: 'Ghana'
+        }
+      ];
+      
+      const startApp = () => {
+      };
+
+      startApp();
+    </script>
+  </body>
+</html>
